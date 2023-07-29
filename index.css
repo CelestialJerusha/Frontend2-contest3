@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.list, .grid{
+    border: 1px solid;
+}
+#container{
+    margin-top: 50px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: black;
+}
+.card{
+    width: 200px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(39, 39, 39)
+}
+img{
+    height: 30px;
+    width: 30px;
+}
+.first{
+    display: flex;
+}
+.nameSymbol{
+    margin-left: 10px;
+}
+.name{
+    color: white;
+}
+.symbol,.cap,.volume{
+    color: grey;
+}
+.name,.bottom{
+    font-size: 14px;
+    
+}
+.second{
+    border: 1px solid green;
+    color: green;
+    height: 20px;
+    width: 50px;
+    border-radius: 15px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+.price{
+    color: green;
+    margin-top: 10px;
+}
+.price,.cap,.volume{
+    margin-bottom: 8px;
+}
