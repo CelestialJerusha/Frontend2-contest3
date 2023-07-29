@@ -19,15 +19,37 @@ const container = document.getElementById("container");
             </div>
         </div>
 */
+const table = document.getElementById("table");
+const button = document.getElementById("gridView");
+button.addEventListener("click",() =>  {
+    
+    fetchCards();
+})
 
 async function fetchCards() {
     let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en";
     const response = await fetch(url);
     const data = await response.json();
+    clearData();
     appendData(data);
+    appendData1(data);
+    // listView(data);
 }
 
+function clearData(){
+    for(let i=0;i<data.length;i++){
+    let a = document.getElementsByTagName("div")[i];
+    if(a === undefined) {
+        return;
+    }
+    a.remove();
+}
+    
+}
+
+
 function appendData(cardsList) {
+    console.log("done");
     cardsList.forEach((card) => {
         /*
         {
@@ -65,5 +87,36 @@ function appendData(cardsList) {
         `
         container.appendChild(div);
     })
+}
+// fetchCards();
+
+
+
+function appendData1(list){
+    let tBody = document.createElement("tbody");
+     for (let i = 0; i < list.length; i++) {
+        let tr = document.createElement("tr");
+        let t1 = document.createElement("img");
+        t1.src = list[i].image;
+
+        let t2 = document.createElement("td");
+        t2.innerText = list[i].name;
+
+        let t3 = document.createElement("td");
+        t3.innerText = list[i].price_change_percentage_24h;
+
+        let t4 = document.createElement("td");
+        t4.innerText = list[i].current_price;
+
+        let t5 = document.createElement("td");
+        t5.innerText = list[i].total_volume;
+
+        let t6 = document.createElement("td");
+        t6.innerText = list[i].market_cap;
+
+        tr.append(t1,t2,t3,t4,t5,t6);
+        tBody.appendChild(tr);
+     }
+     table.appendChild(tBody);
 }
 fetchCards();

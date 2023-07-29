@@ -1,9 +1,13 @@
 *{
+    background-color: black;
     padding: 0;
     margin: 0;
 }
 .list, .grid{
-    border: 1px solid;
+    border: 1px solid white;
+    color: white;
+    background-color: green;
+    padding: 15px 250px;
 }
 #container{
     margin-top: 50px;
@@ -11,34 +15,41 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    background-color: black;
+}
+.top{
+    background-color: rgb(39, 39, 39);
 }
 .card{
     width: 200px;
     border: 1px solid;
     padding: 10px;
     border-radius: 5px;
-    background-color: rgb(39, 39, 39)
+    background-color: rgb(39, 39, 39); 
 }
 img{
     height: 30px;
     width: 30px;
+    background-color: rgb(39, 39, 39);
 }
 .first{
     display: flex;
+    background-color: rgb(39, 39, 39);
 }
 .nameSymbol{
     margin-left: 10px;
+    /* background-color: rgb(39, 39, 39); */
 }
 .name{
     color: white;
+    /* background-color: rgb(39, 39, 39); */
 }
 .symbol,.cap,.volume{
     color: grey;
+    background-color: rgb(39, 39, 39);
 }
 .name,.bottom{
     font-size: 14px;
-    
+    background-color: rgb(39, 39, 39);
 }
 .second{
     border: 1px solid green;
@@ -50,6 +61,7 @@ img{
     text-align: center;
     padding-top: 5px;
     margin-top: 10px;
+    background-color: rgb(39, 39, 39);
 }
 .price{
     color: green;
@@ -57,4 +69,15 @@ img{
 }
 .price,.cap,.volume{
     margin-bottom: 8px;
+    background-color: rgb(39, 39, 39);
+}
+
+table{
+    width: 100%;
+    color: white;
+}
+th,td{
+    padding: 10px;
+
+    text-align: center;
 }
